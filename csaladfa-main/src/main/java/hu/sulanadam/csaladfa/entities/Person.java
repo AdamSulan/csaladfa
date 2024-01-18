@@ -25,7 +25,6 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Table(name = "persons")
 public class Person {
-    //Purpose: main entity 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
@@ -69,11 +68,9 @@ public class Person {
             this.children = new HashSet<>();
         }
     
-        // Check if the child is not already in the set
         if (!this.children.contains(child)) {
             this.children.add(child);
             
-            // Check if the parent is not already set for the child
             if (child.getParent() != this) {
                 child.setParent(this);
             }

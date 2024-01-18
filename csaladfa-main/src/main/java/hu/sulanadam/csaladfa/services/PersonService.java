@@ -148,10 +148,9 @@ public class PersonService {
                             ParentsChildren parentsChildren = new ParentsChildren(newPerson, childEntity);
                             children.add(parentsChildren);
                         }else {
-                            System.err.println("The given Person Entity (Child) does not exist: ");
+                            System.err.println("Az adott Ember nem létezik: ");
                         }
                     } else if (child.name() != null && child.name().length() > 3) {
-                        // ... (create new Person entity for child)
                         ParentsChildren parentsChildren = new ParentsChildren(newPerson, createAndSavePartialEntityChild(child.name()));
                         children.add(parentsChildren);
                     }
@@ -164,7 +163,7 @@ public class PersonService {
                 personRepository.save(newPerson);
             } catch (Exception e) {
                 System.err.println(
-                        "---------------------------Error in saving new Person Entity ------------------------------"
+                        "--------------------------- Hiba az új ember mntésekor ------------------------------"
                                 + e);
                 return false;
             }

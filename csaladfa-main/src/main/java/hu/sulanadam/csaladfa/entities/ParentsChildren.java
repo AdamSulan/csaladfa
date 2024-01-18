@@ -23,7 +23,6 @@ public class ParentsChildren {
         this.id=null;
     }
 
-    //Purpose: ONLY a JOINTABLE related repository and service only exists to serve the PersonService or Person Repository!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
